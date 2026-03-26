@@ -18,9 +18,8 @@ label_map = {
 # Title
 st.title("Deposition Pattern Predictor")
 
-st.write(
-    "Enter film thickness, surface energy, and surface roughness to predict the deposition pattern."
-)
+st.write("A machine learning model to predict deposition patterns")
+
 
 # Inputs (no +/- buttons)
 thickness = st.text_input("Film Thickness(mm)")
@@ -48,3 +47,42 @@ if st.button("Predict"):
 
     except:
         st.error("Please enter valid numeric values.")
+        
+# LOGO
+import base64
+
+def get_base64(img_file):
+    with open(img_file, "rb") as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+img_base64 = get_base64("logo.png")
+
+st.markdown(
+    f"""
+    <div style="display: flex; justify-content: center;">
+        <img src="data:image/png;base64,{img_base64}" width="200">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+st.write("This ML model was developed by Aditya Sinha and Pratyush Padhy under the supervision of Professor Arnab Dutta (in collaboration with Professor Nandini Bhandaru) of BITS Pilani, Hyderabad Campus. This webapp can be used to predict deposition patterns. The classes being predicted are - Coffee Stain, Inverse Coffee Stain and No Coffee Stain.")
+ 
+st.write("Kindly ensure that all feature values are positive. The input requirements for the features are as follows:")
+
+st.write("""
+1. Film thickness must be entered in millimeters (mm)
+
+2. Surface energy must be provided in mJ/m²
+
+3. Surface roughness must be given as SDR %
+
+""")
+
+st.write(
+"This web application has been developed as part of academic work. "
+"We do not take responsibility for any decisions or outcomes based on its predictions."
+)
+
+st.write("For any queries, please send an email to - f20230942@hyderabad.bits-pilani.ac.in, f20231264@hyderabad.bits-pilani.ac.in or arnabdutta@hyderabad.bits-pilani.ac.in")      
