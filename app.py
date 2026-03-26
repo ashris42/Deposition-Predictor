@@ -85,4 +85,4 @@ st.write(
 "We do not take responsibility for any decisions or outcomes based on its predictions."
 )
 
-st.write("For any queries, please send an email to - f20230942@hyderabad.bits-pilani.ac.in, f20231264@hyderabad.bits-pilani.ac.in or arnabdutta@hyderabad.bits-pilani.ac.in")      
+st.write("For any queries, please send an email to - f20230942@hyderabad.bits-pilani.ac.in (Aditya Sinha), f20231264@hyderabad.bits-pilani.ac.in (Pratyush Padhy) or arnabdutta@hyderabad.bits-pilani.ac.in (Arnab Dutta)")      
